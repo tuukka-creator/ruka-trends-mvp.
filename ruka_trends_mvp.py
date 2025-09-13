@@ -32,9 +32,7 @@ def fetch_trends(df_terms: pd.DataFrame, start_months_ago: int = 12, tz: int = 1
         raise RuntimeError("pytrends not installed. Run: pip install pytrends")
     pytrends = TrendReq(hl='en-US', tz=tz)
     results = []
-    date_to = datetime.utcnow()
-    date_from = date_to - relativedelta(months=start_months_ago)
-    timeframe = f"{date_from.strftime('%Y-%m-%d')} {date_to.strftime('%Y-%m-%d')}"
+   timeframe = "today 12-m"  # pakottaa viikkotason pisteet viimeisen 12 kk ajalta
     for market, group in df_terms.groupby('market'):
         geo = market
         terms = group['term'].tolist()
