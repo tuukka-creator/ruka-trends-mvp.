@@ -1,0 +1,180 @@
+{
+  "destination": "Ruka",
+  "refresh_cadence": "Weekly (Monday)",
+  "terms": [
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "brand",
+      "term": "Ruka"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "brand",
+      "term": "Rukakeskus"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "accommodation",
+      "term": "Ruka majoitus"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "accommodation",
+      "term": "Ruka hotelli"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "flights",
+      "term": "Kuusamo lennot"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "flights",
+      "term": "Kuusamo Helsinki lento"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "seasonal",
+      "term": "Ruka syysloma"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "seasonal",
+      "term": "Ruka joululoma"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "activity",
+      "term": "Revontulet Ruka"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "activity",
+      "term": "Hiihtoloma Ruka"
+    },
+    {
+      "market": "FI",
+      "language": "fi",
+      "intent": "activity",
+      "term": "Ruka kesäaktiviteetit"
+    },
+    {
+      "market": "SE",
+      "language": "sv",
+      "intent": "brand",
+      "term": "Ruka Finland"
+    },
+    {
+      "market": "SE",
+      "language": "sv",
+      "intent": "accommodation",
+      "term": "Ruka hotell"
+    },
+    {
+      "market": "SE",
+      "language": "sv",
+      "intent": "flights",
+      "term": "Flyg till Kuusamo"
+    },
+    {
+      "market": "SE",
+      "language": "sv",
+      "intent": "seasonal",
+      "term": "Ruka jul"
+    },
+    {
+      "market": "SE",
+      "language": "sv",
+      "intent": "activity",
+      "term": "Norrsken Ruka"
+    },
+    {
+      "market": "DE",
+      "language": "de",
+      "intent": "brand",
+      "term": "Ruka Finnland"
+    },
+    {
+      "market": "DE",
+      "language": "de",
+      "intent": "accommodation",
+      "term": "Ruka Hotel"
+    },
+    {
+      "market": "DE",
+      "language": "de",
+      "intent": "flights",
+      "term": "Flüge Kuusamo"
+    },
+    {
+      "market": "DE",
+      "language": "de",
+      "intent": "seasonal",
+      "term": "Ruka Weihnachten"
+    },
+    {
+      "market": "DE",
+      "language": "de",
+      "intent": "activity",
+      "term": "Nordlichter Ruka"
+    },
+    {
+      "market": "GB",
+      "language": "en",
+      "intent": "brand",
+      "term": "Ruka Finland"
+    },
+    {
+      "market": "GB",
+      "language": "en",
+      "intent": "accommodation",
+      "term": "Ruka hotel"
+    },
+    {
+      "market": "GB",
+      "language": "en",
+      "intent": "flights",
+      "term": "Flights to Kuusamo"
+    },
+    {
+      "market": "GB",
+      "language": "en",
+      "intent": "family",
+      "term": "Lapland family holidays"
+    },
+    {
+      "market": "GB",
+      "language": "en",
+      "intent": "activity",
+      "term": "Northern lights with kids"
+    },
+    {
+      "market": "NO",
+      "language": "no",
+      "intent": "brand",
+      "term": "Ruka Finland"
+    },
+    {
+      "market": "NO",
+      "language": "no",
+      "intent": "flights",
+      "term": "Fly til Kuusamo"
+    },
+    {
+      "market": "NO",
+      "language": "no",
+      "intent": "activity",
+      "term": "Nordlys Ruka"
+    }
+  ]
+}
