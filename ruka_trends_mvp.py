@@ -1,5 +1,5 @@
 # ruka_trends_mvp.py
-# Google Trends → weekly + precomputed KPIs + recommendations → Google Sheets
+# Google Trends → weekly + KPIs + recommendations → Google Sheets
 
 import argparse, json, os, sys, time
 from pathlib import Path
@@ -33,7 +33,7 @@ def load_terms(json_path: Path) -> pd.DataFrame:
 
 def fetch_trends(df_terms: pd.DataFrame, tz: int = 180) -> pd.DataFrame:
     if TrendReq is None:
-        raise RuntimeError("pytrends not installed. pip install pytrends")
+        raise RuntimeError("pytrends not installed. Run: pip install pytrends")
 
     pytrends = TrendReq(hl="en-US", tz=tz)
     timeframe = "today 12-m"
@@ -182,14 +182,14 @@ def main():
     weekly.to_csv(args.out, index=False)
     print(f"Saved: {args.out} (rows={len(weekly)})")
 
-    # 1) Raakadata (kuten ennen)
+    # Raakadata
     _maybe_sheet_update(weekly, "weekly_trends")
 
-    # 2) Esilasketut KPI:t
+    # KPI:t
     kpis = compute_kpis(weekly, terms_df)
     _maybe_sheet_update(kpis, "metrics_weekly")
 
-    # 3) Top suositukset
+    # Suositukset
     recs = build_recommendations(kpis, top_n_per_market=5)
     if not recs.empty:
         _maybe_sheet_update(recs, "recommendations")
