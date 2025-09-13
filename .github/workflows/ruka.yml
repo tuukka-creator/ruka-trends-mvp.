@@ -2,12 +2,13 @@ name: Ruka Trends Weekly
 
 on:
   schedule:
-    - cron: "5 6 * * 1"   # Ajaa joka maanantai klo 06:05 UTC (~09:05 Helsinki)
-  workflow_dispatch:      # Mahdollisuus ajaa käsin Actionsista
+    - cron: "5 6 * * 1"   # Ajaa joka maanantai 06:05 UTC (~09:05 Helsinki)
+  workflow_dispatch:      # Mahdollistaa manuaalisen ajon Actions-välilehdeltä
 
 jobs:
   run:
     runs-on: ubuntu-latest
+
     steps:
       - name: Checkout
         uses: actions/checkout@v4
@@ -22,9 +23,19 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytrends pandas numpy python-dateutil gspread google-auth
 
+      # Vapaaehtoinen: nopea debug että secretit tulevat oikein
+      - name: Debug env
+        run: |
+          echo "Has SHEET_ID? ${SHEET_ID:+YES}${SHEET_ID:-NO}"
+          echo "Has GOOGLE_SA_JSON? ${GOOGLE_SA_JSON:+YES}${GOOGLE_SA_JSON:-NO}"
+        env:
+          SHEET_ID: ${{ secrets.SHEET_ID }}
+          GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
+
       - name: Run script
         env:
-          SHEET_NAME: "Ruka Demand Trends"
+          SHEET_NAME: "Ruka Demand Trends"     # jää varalle nimitunnistukseen
+          SHEET_ID: ${{ secrets.SHEET_ID }}     # <-- käytä Sheetin ID:tä (suositus)
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
         run: |
           python ruka_trends_mvp.py --terms keywords_ruka.json --tz 180 --out weekly_trends_output.csv
