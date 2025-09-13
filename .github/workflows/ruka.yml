@@ -23,7 +23,7 @@ jobs:
           python -m pip install --upgrade pip
           pip install pytrends pandas numpy python-dateutil gspread google-auth
 
-      # Vapaaehtoinen: nopea debug että secretit tulevat oikein
+      # (valinnainen) nopea tarkistus että secretit tulevat läpi
       - name: Debug env
         run: |
           echo "Has SHEET_ID? ${SHEET_ID:+YES}${SHEET_ID:-NO}"
@@ -34,8 +34,8 @@ jobs:
 
       - name: Run script
         env:
-          SHEET_NAME: "Ruka Demand Trends"     # jää varalle nimitunnistukseen
-          SHEET_ID: ${{ secrets.SHEET_ID }}     # <-- käytä Sheetin ID:tä (suositus)
+          SHEET_NAME: "Ruka Demand Trends"     # varalle nimitunnistukseen
+          SHEET_ID: ${{ secrets.SHEET_ID }}     # suositus: käytä ID:tä
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
         run: |
           python ruka_trends_mvp.py --terms keywords_ruka.json --tz 180 --out weekly_trends_output.csv
