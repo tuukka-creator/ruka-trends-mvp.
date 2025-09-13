@@ -27,4 +27,4 @@ jobs:
           SHEET_NAME: "Ruka Demand Trends"
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
         run: |
-          python ruka_trends_mvp.py --terms keywords_ruka.json --months 12 --tz 180 --out weekly_trends_output.csv
+        python ruka_trends_mvp.py --terms keywords_ruka.json --tz 180 --out weekly_trends_output.csv
