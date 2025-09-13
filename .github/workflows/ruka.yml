@@ -3,7 +3,7 @@ name: Ruka Trends Weekly
 on:
   schedule:
     - cron: "5 6 * * 1"   # Ajaa joka maanantai klo 06:05 UTC (~09:05 Helsinki)
-  workflow_dispatch:      # Antaa mahdollisuuden ajaa käsin Actions-välilehdeltä
+  workflow_dispatch:      # Mahdollisuus ajaa käsin Actionsista
 
 jobs:
   run:
@@ -27,4 +27,4 @@ jobs:
           SHEET_NAME: "Ruka Demand Trends"
           GOOGLE_SA_JSON: ${{ secrets.GOOGLE_SA_JSON }}
         run: |
-        python ruka_trends_mvp.py --terms keywords_ruka.json --tz 180 --out weekly_trends_output.csv
+          python ruka_trends_mvp.py --terms keywords_ruka.json --tz 180 --out weekly_trends_output.csv
